@@ -8,7 +8,7 @@ abstract class ConnectedDeviceOperation {
 
   Future<void> writeCharacteristicWithResponse(
     QualifiedCharacteristic characteristic, {
-    required List<int> value,
+    required List<String> value,
   });
 
   Future<void> writeCharacteristicWithoutResponse(
@@ -55,7 +55,7 @@ class ConnectedDeviceOperationImpl implements ConnectedDeviceOperation {
   @override
   Future<void> writeCharacteristicWithResponse(
     QualifiedCharacteristic characteristic, {
-    required List<int> value,
+    required List<String> value,
   }) async =>
       _blePlatform
           .writeCharacteristicWithResponse(characteristic, value)

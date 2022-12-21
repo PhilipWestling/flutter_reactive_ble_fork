@@ -9,7 +9,7 @@ class BleDeviceInteractor {
     required Future<List<int>> Function(QualifiedCharacteristic characteristic)
         readCharacteristic,
     required Future<void> Function(QualifiedCharacteristic characteristic,
-            {required List<int> value})
+            {required List<String> value})
         writeWithResponse,
     required Future<void> Function(QualifiedCharacteristic characteristic,
             {required List<int> value})
@@ -31,7 +31,7 @@ class BleDeviceInteractor {
       _readCharacteristic;
 
   final Future<void> Function(QualifiedCharacteristic characteristic,
-      {required List<int> value}) _writeWithResponse;
+      {required List<String> value}) _writeWithResponse;
 
   final Future<void> Function(QualifiedCharacteristic characteristic,
       {required List<int> value}) _writeWithoutResponse;
@@ -71,7 +71,7 @@ class BleDeviceInteractor {
   }
 
   Future<void> writeCharacterisiticWithResponse(
-      QualifiedCharacteristic characteristic, List<int> value) async {
+      QualifiedCharacteristic characteristic, List<String> value) async {
     try {
       _logMessage(
           'Write with response value : $value to ${characteristic.characteristicId}');

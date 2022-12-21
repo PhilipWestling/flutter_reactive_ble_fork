@@ -38,7 +38,7 @@ class _CharacteristicInteractionDialog extends StatefulWidget {
   final Future<List<int>> Function(QualifiedCharacteristic characteristic)
       readCharacteristic;
   final Future<void> Function(
-          QualifiedCharacteristic characteristic, List<int> value)
+          QualifiedCharacteristic characteristic, List<String> value)
       writeWithResponse;
 
   final Stream<List<int>> Function(QualifiedCharacteristic characteristic)

@@ -165,7 +165,7 @@ class FlutterReactiveBle {
   /// The returned future completes with an error in case of a failure during writing.
   Future<void> writeCharacteristicWithResponse(
     QualifiedCharacteristic characteristic, {
-    required List<int> value,
+    required List<String> value,
   }) async {
     await initialize();
     return _connectedDeviceOperator.writeCharacteristicWithResponse(
